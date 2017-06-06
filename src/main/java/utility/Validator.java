@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
  */
 public final class Validator {
 
-    private static final int MAX_LATITUDE = 90;
-    private static final int MIN_LATITUDE = -90;
-    private static final int MAX_LONGITUDE = 180;
-    private static final int MIN_LONGITUDE = -180;
+    private static final double MAX_LATITUDE = 90;
+    private static final double MIN_LATITUDE = -90;
+    private static final double MAX_LONGITUDE = 180;
+    private static final double MIN_LONGITUDE = -180;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Validator.class);
 
