@@ -10,6 +10,9 @@ import domain.Speed;
  */
 public class TestData {
 
+
+    public static final String datePattern = "yyyy-MM-dd HH:mm:ss.SSS";
+
     public static final String dateOne ="2016-04-26 08:34:55.000";
     public static final String dateTwo ="2016-04-26 08:35:00.000";
     public static final String dateThree ="2016-04-26 08:35:05.000";

@@ -21,8 +21,8 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataTotalDurationDifferentDates() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -102,8 +102,8 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataExceedSpeedLimitTwoOfTwoPoints() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -132,11 +132,11 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataExceedSpeedLimitFourOfFivePoints() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
-        Date dateThree = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateThree);
-        Date dateFour = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateFour);
-        Date dateFive = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateFive);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
+        Date dateThree = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateThree);
+        Date dateFour = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateFour);
+        Date dateFive = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateFive);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -187,12 +187,12 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataExceedSpeedLimitFourOfSixPoints() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
-        Date dateThree = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateThree);
-        Date dateFour = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateFour);
-        Date dateFive = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateFive);
-        Date dateSix = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateSix);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
+        Date dateThree = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateThree);
+        Date dateFour = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateFour);
+        Date dateFive = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateFive);
+        Date dateSix = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateSix);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -250,9 +250,9 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataExceedSpeedLimitTwoOfThreePoints() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
-        Date dateThree = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateThree);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
+        Date dateThree = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateThree);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -287,8 +287,8 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataDistanceSpeedingNormalSpeed() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
@@ -317,8 +317,8 @@ public class WaypointTest {
     @Test
     public void organizeWaypointsDataDurationSpeedingNormalSpeed() throws ParseException {
 
-        Date dateOne = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateOne);
-        Date dateTwo = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(TestData.dateTwo);
+        Date dateOne = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateOne);
+        Date dateTwo = new SimpleDateFormat(TestData.datePattern).parse(TestData.dateTwo);
 
         Waypoint waypointOne = new WaypointBuilder()
                 .withTimestamp(dateOne)
