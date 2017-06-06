@@ -20,18 +20,18 @@ public class WaypointsParser {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(WaypointsParser.class);
 
-    private static List<Waypoint> waypoints = new ArrayList<Waypoint>();
-
-    static ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     public static List<Waypoint> parsedWaypoints(String jsonPath) {
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
         try {
             bufferedReader = new BufferedReader(new FileReader(jsonPath));
         } catch (FileNotFoundException e) {
             LOGGER.error("Json file not found in the path {}", jsonPath);
             throw new WaypointsParserException("Json file not found in the path %s!", jsonPath);
         }
+
+        List<Waypoint> waypoints;
 
         try {
             waypoints = mapper.readValue(bufferedReader, mapper.getTypeFactory().constructCollectionType(List.class, Waypoint.class));

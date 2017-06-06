@@ -31,7 +31,7 @@ public class WaypointTest {
                 .withTimestamp(dateTwo)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -49,7 +49,7 @@ public class WaypointTest {
         Waypoint waypointTwo = new WaypointBuilder()
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -69,7 +69,7 @@ public class WaypointTest {
                 .withPosition(TestData.positionFive)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -89,7 +89,7 @@ public class WaypointTest {
                 .withPosition(TestData.positionOne)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -118,7 +118,7 @@ public class WaypointTest {
                 .withSpeedLimit(TestData.speedLimitTwenty)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -170,7 +170,7 @@ public class WaypointTest {
                 .build();
 
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
         waypoints.add(waypointThree);
@@ -232,7 +232,7 @@ public class WaypointTest {
                 .withSpeedLimit(TestData.speedLimitTwenty)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
         waypoints.add(waypointThree);
@@ -273,7 +273,7 @@ public class WaypointTest {
                 .withSpeedLimit(TestData.speedLimitTwenty)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
         waypoints.add(waypointThree);
@@ -303,7 +303,7 @@ public class WaypointTest {
                 .withSpeedLimit(TestData.speedLimitThirtyFive)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -331,7 +331,7 @@ public class WaypointTest {
                 .withSpeedLimit(TestData.speedLimitThirtyFive)
                 .build();
 
-        List<Waypoint> waypoints = new ArrayList<Waypoint>();
+        List<Waypoint> waypoints = new ArrayList<>();
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
@@ -343,7 +343,7 @@ public class WaypointTest {
 
 
     @Test(expected = ValidationFailedException.class)
-    public void WaypointInvalidLatitude() {
+    public void waypointInvalidLatitude() {
 
         double invalidLatitude = -185.99;
         double validLongitude = 23.89;
@@ -355,7 +355,7 @@ public class WaypointTest {
     }
 
     @Test(expected = ValidationFailedException.class)
-    public void WaypointInvalidLongitude() {
+    public void waypointInvalidLongitude() {
 
         double validLatitude = -23.99;
         double invalidLongitude = 223.89;
@@ -366,7 +366,7 @@ public class WaypointTest {
     }
 
     @Test(expected = ValidationFailedException.class)
-    public void WaypointInvalidSpeed() {
+    public void waypointInvalidSpeed() {
 
         double invalidSpeed = -10.09;
 
@@ -376,7 +376,7 @@ public class WaypointTest {
     }
 
     @Test(expected = ValidationFailedException.class)
-    public void WaypointInvalidSpeedLimit() {
+    public void waypointInvalidSpeedLimit() {
 
         double invalidSpeedLimit = -10.09;
 

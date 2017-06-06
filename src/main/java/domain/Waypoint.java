@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
  */
 public class Waypoint {
 
-
     private Date timestamp;
     private Position position;
     private Speed speed;
@@ -83,9 +82,7 @@ public class Waypoint {
         ArrayList<List<Waypoint>> waypointList = waypointListNonFiltered.stream().filter(list -> list.size() != 0)
                 .collect(Collectors.toCollection(ArrayList::new));
 
-        double result = waypointList.stream().mapToDouble(e -> distanceBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
-
-        return result;
+        return waypointList.stream().mapToDouble(e -> distanceBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
 
     }
 
@@ -96,9 +93,7 @@ public class Waypoint {
         ArrayList<List<Waypoint>> waypointList = waypointListNonFiltered.stream().filter(list -> list.size() != 0)
                 .collect(Collectors.toCollection(ArrayList::new));
 
-        double result = waypointList.stream().mapToDouble(e -> durationBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
-
-        return result;
+        return waypointList.stream().mapToDouble(e -> durationBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
 
     }
 
@@ -126,7 +121,7 @@ public class Waypoint {
     /**
      * This function extracts the sublist of sequential waypoints in those
      * speed has been higher than the limit.
-     * @param waypoints
+     * @param waypoints list of all waypoints
      * @return list of sequential waypoints
      */
     private List<List<Waypoint>> extractSequentialWaypointPairs(List<Waypoint> waypoints) {

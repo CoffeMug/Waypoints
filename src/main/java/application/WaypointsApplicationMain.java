@@ -9,7 +9,7 @@ import utility.WaypointsParser;
 /**
  * Created by amin on 2017-05-31.
  */
-public class WaypointsApplicationMain {
+class WaypointsApplicationMain {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Waypoint.class);
 
@@ -20,7 +20,7 @@ public class WaypointsApplicationMain {
             System.exit(0);
         }
 
-        OrganizedResult organizedResult = new Waypoint().organizeWaypointsData(new WaypointsParser().parsedWaypoints(args[0]));
+        OrganizedResult organizedResult = new Waypoint().organizeWaypointsData(WaypointsParser.parsedWaypoints(args[0]));
 
         LOGGER.info("Distance speeding {} (km).", organizedResult.getDistanceSpeeding());
         LOGGER.info("Duration speeding {} (seconds).", organizedResult.getDurationSpeeding());
