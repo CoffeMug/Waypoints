@@ -16,11 +16,16 @@ import java.util.List;
 /**
  * Created by amin on 2017-06-02.
  */
-public class WaypointsParser {
+public final class WaypointsParser {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(WaypointsParser.class);
 
     private static final ObjectMapper mapper = new ObjectMapper();
+
+    private WaypointsParser() {
+        // This is a utility class
+        throw new AssertionError();
+    }
 
     public static List<Waypoint> parsedWaypoints(String jsonPath) {
         BufferedReader bufferedReader;

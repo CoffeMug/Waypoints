@@ -122,7 +122,7 @@ public class Waypoint {
      * This function extracts the sublist of sequential waypoints in those
      * speed has been higher than the limit.
      * @param waypoints list of all waypoints
-     * @return list of sequential waypoints
+     * @return list of sequential waypoints in those speed has exceeded the limit
      */
     private List<List<Waypoint>> extractSequentialWaypointPairs(List<Waypoint> waypoints) {
 
