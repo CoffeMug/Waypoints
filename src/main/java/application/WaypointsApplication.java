@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import utility.WaypointsParser;
 
 @Slf4j
-class WaypointsApplicationMain {
+class WaypointsApplication {
     
     public static void main (String[] args) {
 

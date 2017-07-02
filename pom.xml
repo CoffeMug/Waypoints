@@ -55,7 +55,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>${basedir}/src/main/resources</classpathPrefix>
-                            <mainClass>application.WaypointsApplicationMain</mainClass>
+                            <mainClass>application.WaypointsApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -65,7 +65,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>application.WaypointsApplicationMain</mainClass>
+                            <mainClass>application.WaypointsApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
