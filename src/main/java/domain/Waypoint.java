@@ -1,24 +1,25 @@
 package domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by amin on 2017-05-31.
- */
+@Getter
+@Setter
+@NoArgsConstructor(force = true)
 public class Waypoint {
 
-    private Date timestamp;
-    private Position position;
-    private Speed speed;
+    private final Date timestamp;
+    private final Position position;
+    private final Speed speed;
     @JsonProperty("speed_limit")
-    private Speed speedLimit;
-
-    public Waypoint() {
-        // Suppress Json mapping exception
-    }
+    private final Speed speedLimit;
 
     public Waypoint(Date timestamp, Position position, Speed speed, Speed speedLimit) {
         this.timestamp = timestamp;
@@ -27,39 +28,7 @@ public class Waypoint {
         this.speedLimit = speedLimit;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public Speed getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(Speed speed) {
-        this.speed = speed;
-    }
-
-    public Speed getSpeedLimit() {
-        return speedLimit;
-    }
-
-    public void setSpeedLimit(Speed speedLimit) {
-        this.speedLimit = speedLimit;
-    }
-
-    public OrganizedResult organizeWaypointsData(List<Waypoint> waypoints) {
+    public static OrganizedResult organizeWaypointsData(List<Waypoint> waypoints) {
 
         OrganizedResult result = new OrganizedResult();
 
@@ -75,7 +44,7 @@ public class Waypoint {
                 .withDurationSpeeding(durationSpeeding);
     }
 
-    private double distanceSpeeding(List<Waypoint> waypoints) {
+    private static double distanceSpeeding(List<Waypoint> waypoints) {
 
         List<List<Waypoint>> waypointListNonFiltered = extractSequentialWaypointPairs(waypoints);
 
@@ -86,7 +55,7 @@ public class Waypoint {
 
     }
 
-    private double durationSpeeding(List<Waypoint> waypoints) {
+    private static double durationSpeeding(List<Waypoint> waypoints) {
 
         List<List<Waypoint>> waypointListNonFiltered = extractSequentialWaypointPairs(waypoints);
 
@@ -97,12 +66,12 @@ public class Waypoint {
 
     }
 
-    private double distanceBetweenTwoWaypoints(Waypoint waypointOne, Waypoint waypointTwo) {
+    private static double distanceBetweenTwoWaypoints(Waypoint waypointOne, Waypoint waypointTwo) {
 
-        double startLongitude = waypointOne.getPosition().getLongitude().getValue();
-        double endLongitude = waypointTwo.getPosition().getLongitude().getValue();
-        double startLatitude = waypointOne.getPosition().getLatitude().getValue();
-        double endLatitude = waypointTwo.getPosition().getLatitude().getValue();
+        double startLongitude = waypointOne.position.getLongitude().getValue();
+        double endLongitude = waypointTwo.position.getLongitude().getValue();
+        double startLatitude = waypointOne.position.getLatitude().getValue();
+        double endLatitude = waypointTwo.position.getLatitude().getValue();
 
         double theta = startLongitude - endLongitude;
 
@@ -114,8 +83,8 @@ public class Waypoint {
         return distance;
     }
 
-    private double durationBetweenTwoWaypoints(Waypoint firstWaypoint, Waypoint lastWaypoint) {
-        return (lastWaypoint.getTimestamp().getTime() - firstWaypoint.getTimestamp().getTime()) / 1000;
+    private static double durationBetweenTwoWaypoints(Waypoint firstWaypoint, Waypoint lastWaypoint) {
+        return (lastWaypoint.timestamp.getTime() - firstWaypoint.timestamp.getTime()) / 1000;
     }
 
     /**
@@ -124,7 +93,7 @@ public class Waypoint {
      * @param waypoints list of all waypoints
      * @return list of sequential waypoints
      */
-    private List<List<Waypoint>> extractSequentialWaypointPairs(List<Waypoint> waypoints) {
+    private static List<List<Waypoint>> extractSequentialWaypointPairs(List<Waypoint> waypoints) {
 
         List<List<Waypoint>> results = new ArrayList<>();
         int previous = 0;
@@ -139,11 +108,11 @@ public class Waypoint {
         return results;
     }
 
-    private double deg2rad(double deg) {
+    private static double deg2rad(double deg) {
         return deg * Math.PI / 180.0;
     }
 
-    private double rad2deg(double rad) {
+    private static double rad2deg(double rad) {
         return rad * 180 / Math.PI;
     }
 

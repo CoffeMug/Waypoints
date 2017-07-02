@@ -13,9 +13,6 @@ import util.WaypointBuilder;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by amin on 2017-06-03.
- */
 public class WaypointTest {
 
     @Test
@@ -35,7 +32,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(5, result.getTotalDuration(), 0.001);
     }
@@ -53,7 +50,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0, result.getTotalDuration(), 0.001);
     }
@@ -73,7 +70,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0.189, result.getTotalDistance(), 0.001);
 
@@ -93,7 +90,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0, result.getTotalDistance(), 0.001);
 
@@ -122,7 +119,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0.044, result.getDistanceSpeeding(), 0.001);
         assertEquals(5, result.getDurationSpeeding(), 0.001);
@@ -177,7 +174,7 @@ public class WaypointTest {
         waypoints.add(waypointFour);
         waypoints.add(waypointFive);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0.089, result.getDistanceSpeeding(), 0.001);
         assertEquals(10, result.getDurationSpeeding(), 0.001);
@@ -240,7 +237,7 @@ public class WaypointTest {
         waypoints.add(waypointFive);
         waypoints.add(waypointSix);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0.3, result.getDistanceSpeeding(), 0.001);
         assertEquals(10, result.getDurationSpeeding(), 0.001);
@@ -278,7 +275,7 @@ public class WaypointTest {
         waypoints.add(waypointTwo);
         waypoints.add(waypointThree);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0.068, result.getDistanceSpeeding(), 0.001);
         assertEquals(5, result.getDurationSpeeding(), 0.001);
@@ -307,7 +304,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0, result.getDistanceSpeeding(), 0.001);
 
@@ -335,7 +332,7 @@ public class WaypointTest {
         waypoints.add(waypointOne);
         waypoints.add(waypointTwo);
 
-        OrganizedResult result = new Waypoint().organizeWaypointsData(waypoints);
+        OrganizedResult result = Waypoint.organizeWaypointsData(waypoints);
 
         assertEquals(0, result.getDurationSpeeding(), 0.001);
 

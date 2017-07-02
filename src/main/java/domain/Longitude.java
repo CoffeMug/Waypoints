@@ -5,9 +5,6 @@ import java.util.Objects;
 
 import static utility.Validator.validLongitude;
 
-/**
- * Created by amin on 2017-05-31.
- */
 public class Longitude extends DomainObject {
 
     private final double value;

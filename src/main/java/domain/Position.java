@@ -2,9 +2,6 @@ package domain;
 
 import java.util.Objects;
 
-/**
- * Created by amin on 2017-05-31.
- */
 public class Position extends DomainObject{
 
     private Latitude latitude;

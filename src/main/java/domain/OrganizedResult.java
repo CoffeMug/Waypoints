@@ -1,8 +1,5 @@
 package domain;
 
-/**
- * Created by amin on 2017-06-03.
- */
 public class OrganizedResult {
 
     private double distanceSpeeding;

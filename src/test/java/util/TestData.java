@@ -5,9 +5,6 @@ import domain.Longitude;
 import domain.Position;
 import domain.Speed;
 
-/**
- * Created by amin on 2017-06-03.
- */
 public class TestData {
 
 

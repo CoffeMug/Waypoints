@@ -6,9 +6,6 @@ import java.util.Objects;
 
 import static utility.Validator.validSpeed;
 
-/**
- * Created by amin on 2017-05-31.
- */
 public class Speed extends DomainObject{
 
     private final double value;

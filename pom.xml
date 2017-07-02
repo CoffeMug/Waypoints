@@ -17,6 +17,7 @@
         <maven-pmd-version>3.7</maven-pmd-version>
         <junit-version>4.12</junit-version>
         <maven-jar-plugin-version>2.4</maven-jar-plugin-version>
+        <lombok-version>1.16.16</lombok-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -104,6 +105,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

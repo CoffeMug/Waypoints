@@ -6,9 +6,6 @@ import java.util.Objects;
 
 import static utility.Validator.validLatitude;
 
-/**
- * Created by amin on 2017-05-31.
- */
 public class Latitude extends DomainObject {
 
     private final double value;
