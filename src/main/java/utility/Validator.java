@@ -11,6 +11,12 @@ public final class Validator {
     private static final double MAX_LONGITUDE = 180;
     private static final double MIN_LONGITUDE = -180;
 
+
+    private Validator() {
+        // This is a utility class
+        throw new AssertionError();
+    }
+
     public static void validLatitude(double value, String field) {
         if (value < MIN_LATITUDE || value > MAX_LATITUDE) {
             log.warn("Invalid json data for the attribute {} ", field);

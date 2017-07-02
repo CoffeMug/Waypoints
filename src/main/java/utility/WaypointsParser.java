@@ -16,6 +16,11 @@ public class WaypointsParser {
 
     private static final ObjectMapper mapper = new ObjectMapper();
 
+    private WaypointsParser() {
+        // This is a utility class
+        throw new AssertionError();
+    }
+
     public static List<Waypoint> parsedWaypoints(String jsonPath) {
         BufferedReader bufferedReader;
         try {
