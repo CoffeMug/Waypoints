@@ -1,6 +1,7 @@
 package domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @NoArgsConstructor(force = true)
+@AllArgsConstructor
 public class Waypoint {
 
     private final Date timestamp;
@@ -20,13 +22,6 @@ public class Waypoint {
     private final Speed speed;
     @JsonProperty("speed_limit")
     private final Speed speedLimit;
-
-    public Waypoint(Date timestamp, Position position, Speed speed, Speed speedLimit) {
-        this.timestamp = timestamp;
-        this.position = position;
-        this.speed = speed;
-        this.speedLimit = speedLimit;
-    }
 
     public static OrganizedResult organizeWaypointsData(List<Waypoint> waypoints) {
 
