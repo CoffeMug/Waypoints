@@ -9,7 +9,6 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -25,14 +24,12 @@ public class Waypoint {
 
     public static OrganizedResult organizeWaypointsData(List<Waypoint> waypoints) {
 
-        OrganizedResult result = new OrganizedResult();
-
         double totalDistance = distanceBetweenTwoWaypoints(waypoints.get(0), waypoints.get(waypoints.size() - 1));
         double totalDuration = durationBetweenTwoWaypoints(waypoints.get(0), waypoints.get(waypoints.size() - 1));
         double distanceSpeeding = distanceSpeeding(waypoints);
         double durationSpeeding = durationSpeeding(waypoints);
 
-        return result
+        return new OrganizedResult()
                 .withTotalDistance(totalDistance)
                 .withTotalDuration(totalDuration)
                 .withDistanceSpeeding(distanceSpeeding)
@@ -41,24 +38,20 @@ public class Waypoint {
 
     private static double distanceSpeeding(List<Waypoint> waypoints) {
 
-        List<List<Waypoint>> waypointListNonFiltered = extractSequentialWaypointPairs(waypoints);
-
-        ArrayList<List<Waypoint>> waypointList = waypointListNonFiltered.stream().filter(list -> list.size() != 0)
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        return waypointList.stream().mapToDouble(e -> distanceBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
-
+        return extractSequentialWaypointPairs(waypoints)
+                .stream()
+                .filter(list -> list.size() != 0)
+                .mapToDouble(e -> distanceBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1)))
+                .sum();
     }
 
     private static double durationSpeeding(List<Waypoint> waypoints) {
 
-        List<List<Waypoint>> waypointListNonFiltered = extractSequentialWaypointPairs(waypoints);
-
-        ArrayList<List<Waypoint>> waypointList = waypointListNonFiltered.stream().filter(list -> list.size() != 0)
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        return waypointList.stream().mapToDouble(e -> durationBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1))).sum();
-
+        return extractSequentialWaypointPairs(waypoints)
+                .stream()
+                .filter(list -> list.size() != 0)
+                .mapToDouble(e -> durationBetweenTwoWaypoints(e.get(0), e.get(e.size() - 1)))
+                .sum();
     }
 
     private static double distanceBetweenTwoWaypoints(Waypoint waypointOne, Waypoint waypointTwo) {
@@ -110,6 +103,4 @@ public class Waypoint {
     private static double rad2deg(double rad) {
         return rad * 180 / Math.PI;
     }
-
-
 }
